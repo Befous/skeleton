@@ -1,8 +1,8 @@
 //lib call
 import { insertHTML } from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.4/croot.js";
 //internal call
-import { url,id } from "../url/config.js";
-import { getContentURL,getURLContentJS } from "../url/content.js";
+import { url, id } from "../url/config.js";
+import { getContentURL, getURLContentJS } from "../url/content.js";
 
 
 export function runAfterHashChange(evt){

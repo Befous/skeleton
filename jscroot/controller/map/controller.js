@@ -1,4 +1,4 @@
-import {map} from './config.js';
+import { map } from './config.js';
 
 export function MakeGeojsonFromAPI(value) {
     const geojsonFeatureCollection = {
