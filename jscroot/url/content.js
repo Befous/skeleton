@@ -30,6 +30,8 @@ export function getContentURL(){
             return url.template.content+"saved.html";
         case "logout":
             return url.template.content+"logout.html";
+        case "map":
+            return url.template.content+"map.html";
         default:
             return url.template.content+"home.html";
     }
@@ -65,6 +67,8 @@ export function getURLContentJS(){
             return url.view.content+"saved.js";
         case "logout":
             return url.view.content+"logout.js";
+        case "map":
+            return url.view.content+"map.js";
         default:
             return url.view.content+"home.js";
     }

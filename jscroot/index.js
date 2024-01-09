@@ -18,5 +18,3 @@ addCSS("assets/css/styles.css");
 insertHTML(url.template.header,id.header,runAfterHeader);
 insertHTML(getContentURL(),id.content,runAfterContent);
 onHashChange(runAfterHashChange);
-
-
