@@ -1,5 +1,7 @@
 import { setInner } from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.2/croot.js";
 import { transform } from 'https://cdn.skypack.dev/ol/proj.js';
+import {addCSSIn} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
+import {id} from "../../url/config.js";
 //map
 import { overlay, popupinfo, map } from '../../controller/map/config.js';
 import { popupInputMarker, onClosePopupClick, onMapPointerMove, disposePopover, onMapClick } from '../../controller/map/popup.js';
@@ -9,8 +11,10 @@ import { get } from '../../controller/map/api.js';
 import { xxx } from '../../controller/map/template.js';
 import { MakeGeojsonFromAPI, AddLayerToMAP } from '../../controller/map/controller.js';
 
-export function main(){
+export async function main(){
     setInner("biggreet", "");
+    await addCSSIn("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css",id.content);
+    await addCSSIn("assets/css/forum.css",id.content);
 }
 
 onClick('overlay-closer', onClosePopupClick);

@@ -3,6 +3,7 @@ import { overlay, map, popupinfo } from './config.js';
 import { clickpopup, aaa, bbb, ccc, qqq, www, eee, rrr, ttt, yyy, uuu } from './template.js';
 import { setInner, setValue } from './element.js';
 import { getCookie } from './cookie.js';
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js';
 
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
@@ -141,11 +142,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -167,11 +182,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json()
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -193,11 +222,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -219,11 +262,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -245,11 +302,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -271,11 +342,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -297,11 +382,25 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Warning",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 } else {
-                    alert(responseData.message);
-                    window.location.reload();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: responseData.message,
+                        showConfirmButton: false,
+                        timer: 150000
+                    }).then(() => {
+                        window.location.reload();
+                    });
                 }
             } catch (error) {
                 console.error('Error:', error)
