@@ -17,6 +17,7 @@ onClick('overlay-closer', onClosePopupClick);
 onClick('popupinfo-closer', onClosePopupClick);
 
 const typeSelect = document.getElementById('type');
+const geospatialSelect = document.getElementById('geospatial');
 const styles = {
     Point: {
       'circle-radius': 5,
@@ -40,6 +41,8 @@ const styles = {
 let draw; // global so we can remove it later
 let layer;
 let value = typeSelect.value; // Move the variable definition here
+let geospatial = geospatialSelect.value; // Move the variable definition here
+
 
 function addInteraction() {
     // Remove the previous interaction and event listeners
@@ -75,7 +78,7 @@ function addInteraction() {
                     overlay.setPosition(undefined)
                     popupinfo.setPosition(undefined)
                     if (typeSelect.value === 'Point') {
-                        popupInputMarker(e, geometry.getType(), coordinates)
+                        popupInputMarker(e, geometry.getType(), geospatial, coordinates)
                     }
                 })
             } else if (geometry.getType() === 'LineString') {
@@ -86,7 +89,7 @@ function addInteraction() {
                     overlay.setPosition(undefined)
                     popupinfo.setPosition(undefined)
                     if (typeSelect.value === 'LineString') {
-                        popupInputMarker(e, geometry.getType(), coordinates)
+                        popupInputMarker(e, geometry.getType(), geospatial, coordinates)
                     }
                 })
             } else if (geometry.getType() === 'Polygon') {
@@ -97,7 +100,7 @@ function addInteraction() {
                     overlay.setPosition(undefined)
                     popupinfo.setPosition(undefined)
                     if (typeSelect.value === 'Polygon') {
-                        popupInputMarker(e, geometry.getType(), coordinates)
+                        popupInputMarker(e, geometry.getType(), geospatial, coordinates)
                     }
                 })
             }
@@ -115,6 +118,7 @@ function addInteraction() {
 
 typeSelect.onchange = function () {
     value = typeSelect.value;
+    geospatial = geospatialSelect.value;
     map.removeInteraction(draw);
     addInteraction();
 };

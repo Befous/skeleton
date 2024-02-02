@@ -1,6 +1,6 @@
 import { toLonLat } from 'https://cdn.skypack.dev/ol/proj.js';
 import { overlay, map, popupinfo } from './config.js';
-import { clickpopup, aaa, bbb, ccc } from './template.js';
+import { clickpopup, aaa, bbb, ccc, qqq, www, eee, rrr, ttt, yyy, uuu } from './template.js';
 import { setInner, setValue } from './element.js';
 import { getCookie } from './cookie.js';
 
@@ -8,9 +8,12 @@ export function onClosePopupClick() {
     overlay.setPosition(undefined);
 }
 
-export function popupInputMarker(evt, type, coordinates) {
+export function popupInputMarker(evt, type, geospatial, coordinates) {
     let tile = evt.coordinate;
     let name = document.getElementById('inputname');
+    let max = document.getElementById('inputmax');
+    let min = document.getElementById('inputmin');
+    let radius = document.getElementById('inputradius');
     let msg = clickpopup.replace("#COORDINATE#", coordinates).replace("#TYPE#", type);
     setInner('popup-content', msg);
     setValue('koordinattt', coordinates);
@@ -20,7 +23,7 @@ export function popupInputMarker(evt, type, coordinates) {
         
     let insertmarkerbutton = document.getElementById('insertmarkerbutton');
     insertmarkerbutton?.addEventListener('click', async () => {
-        const token = getCookie('token')        
+        const token = getCookie('token');
         let data = {
             "type": "Feature",
             "properties": {
@@ -30,7 +33,7 @@ export function popupInputMarker(evt, type, coordinates) {
             "type": type,
             "coordinates": coordinates
             }
-        }
+        };
         
         if (type === 'Point') {
             try {
@@ -44,18 +47,18 @@ export function popupInputMarker(evt, type, coordinates) {
                 })
     
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`)
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
     
-                const responseData = await response.json()
+                const responseData = await response.json();
                 if (responseData.status === false) {
-                    console.log(responseData.message)
+                    console.log(responseData.message);
                 } else {
-                    console.log(responseData.message)
-                    window.location.reload()
+                    console.log(responseData.message);
+                    window.location.reload();
                 }
             } catch (error) {
-                console.error('Error:', error)
+                console.error('Error:', error);
             }
         } else if (type === 'LineString') {
             try {
@@ -69,18 +72,18 @@ export function popupInputMarker(evt, type, coordinates) {
                 })
     
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`)
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
     
                 const responseData = await response.json()
                 if (responseData.status === false) {
-                    console.log(responseData.message)
+                    console.log(responseData.message);
                 } else {
-                    console.log(responseData.message)
-                    window.location.reload()
+                    console.log(responseData.message);
+                    window.location.reload();
                 }
             } catch (error) {
-                console.error('Error:', error)
+                console.error('Error:', error);
             }
         } else if (type === 'Polygon') {
             try {
@@ -94,15 +97,211 @@ export function popupInputMarker(evt, type, coordinates) {
                 })
     
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`)
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    console.log(responseData.message);
+                } else {
+                    console.log(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        };
+    })
+
+    let findmarkerbutton = document.getElementById('findmarkerbutton');
+    findmarkerbutton?.addEventListener('click', async () => {
+        const token = getCookie('token');
+        let datageospatial = {
+            "type": type,
+            "coordinates": coordinates,
+            "max": parseFloat(max.value),
+            "min": parseFloat(min.value),
+            "radius": parseFloat(radius.value),
+        };
+        
+        if (geospatial === 'GeoInstects') {
+            try {
+                const response = await fetch(qqq, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        } else if (geospatial === 'GeoWithin') {
+            try {
+                const response = await fetch(www, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
     
                 const responseData = await response.json()
                 if (responseData.status === false) {
-                    console.log(responseData.message)
+                    alert(responseData.message);
+                    window.location.reload();
                 } else {
-                    console.log(responseData.message)
-                    window.location.reload()
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        } else if (geospatial === 'Near') {
+            try {
+                const response = await fetch(eee, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (geospatial === 'NearSphere') {
+            try {
+                const response = await fetch(rrr, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (geospatial === 'Box') {
+            try {
+                const response = await fetch(ttt, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (geospatial === 'Center') {
+            try {
+                const response = await fetch(yyy, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (geospatial === 'CenterSphere') {
+            try {
+                const response = await fetch(uuu, {
+                    method: 'POST',
+                    body: JSON.stringify(datageospatial), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const responseData = await response.json();
+                if (responseData.status === false) {
+                    alert(responseData.message);
+                    window.location.reload();
+                } else {
+                    alert(responseData.message);
+                    window.location.reload();
                 }
             } catch (error) {
                 console.error('Error:', error)

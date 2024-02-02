@@ -16,16 +16,39 @@
     </div>
 </div>
 
-<div id="popup" class="ol-popup bg-white border p-4 rounded shadow-md">
+<div class="row">
+    <div class="col-auto">
+        <span class="input-group">
+        <label class="input-group-text" htmlFor="type">Geospatial:</label>
+        <select class="form-select" id="geospatial">
+            <option value="None">None</option>
+            <option value="GeoInstects">GeoInstects</option>
+            <option value="GeoWithin">GeoWithin</option>
+            <option value="Near">Near</option>
+            <option value="NearSphere">NearSphere</option>
+            <option value="Box">Box</option>
+            <option value="Center">Center</option>
+            <option value="CenterSphere">CenterSphere</option>
+        </select>
+        </span>
+    </div>
+</div>
+
+<div id="popup" class="ol-popup bg-white border p-6 rounded shadow-md">
     <b id="popup-title" class="block mb-2 font-semibold">Input Koordinat</b>
     <a id="overlay-closer" class="ol-popup-closer"></a>
     <div id="popup-input">
-        <label htmlFor="inputname" class="block mb-1">Name :</label>
-        <input type="text" id="inputname" name="inputname" class="border p-1 mb-2 w-full" required />
+        <label for="inputname" class="block mb-1">Name :</label>
+        <input type="text" id="inputname" name="inputname" class="border p-1 mb-2 w-full" />
+        <label for="inputmax" class="block mb-1">Max Distance :</label>
+        <input type="text" id="inputmax" name="inputmax" class="border p-1 mb-2 w-full" />
+        <label for="inputmin" class="block mb-1">Min Distance :</label>
+        <input type="text" id="inputmin" name="inputmin" class="border p-1 mb-2 w-full" />
+        <label for="inputradius" class="block mb-1">Radius Circle :</label>
+        <input type="text" id="inputradius" name="inputradius" class="border p-1 mb-2 w-full" />
         <input type="hidden" id="koordinattt" name="koordinattt" value="" />
-        <input type="hidden" id="long" name="long" value="" />
-        <input type="hidden" id="lat" name="lat" value="" />
-        <button id="insertmarkerbutton" type="button" class="bg-blue-500 text-white px-3 py-1 rounded">Input</button><br />
+        <button id="insertmarkerbutton" type="button" class="bg-blue-500 text-white px-3 py-1 rounded">Insert Geojson</button><br />
+        <button id="findmarkerbutton" type="button" class="bg-blue-500 text-white px-3 py-1 rounded">Find Geospatial</button><br />
     </div>
     <div id="popup-content"></div>
 </div>
