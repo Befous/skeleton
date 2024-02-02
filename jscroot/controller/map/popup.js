@@ -146,8 +146,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -156,8 +157,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -186,8 +188,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -196,8 +199,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -226,8 +230,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -236,8 +241,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -266,8 +272,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -276,8 +283,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -306,8 +314,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -316,8 +325,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -346,8 +356,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -356,8 +367,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -386,8 +398,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "warning",
                         title: "Warning",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
@@ -396,8 +409,9 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         icon: "success",
                         title: "Success",
                         text: responseData.message,
-                        showConfirmButton: false,
-                        timer: 150000
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        confirmButtonColor: "#A5DC86",
                     }).then(() => {
                         window.location.reload();
                     });
