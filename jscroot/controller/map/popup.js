@@ -1,20 +1,114 @@
 import { toLonLat } from 'https://cdn.skypack.dev/ol/proj.js';
 import { overlay, map, popupinfo } from './config.js';
-import { clickpopup } from './template.js';
+import { clickpopup, aaa, bbb, ccc } from './template.js';
 import { setInner, setValue } from './element.js';
+import { getCookie } from './cookie.js';
 
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
 }
 
-function popupInputMarker(evt) {
+export function popupInputMarker(evt, type, coordinates) {
     let tile = evt.coordinate;
-    let coordinate = toLonLat(tile);
-    let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]);
+    let name = document.getElementById('inputname');
+    let msg = clickpopup.replace("#COORDINATE#", coordinates).replace("#TYPE#", type);
     setInner('popup-content', msg);
-    setValue('long', coordinate[0]);
-    setValue('lat', coordinate[1]);
+    setValue('koordinattt', coordinates);
     overlay.setPosition(tile);
+
+
+        
+    let insertmarkerbutton = document.getElementById('insertmarkerbutton');
+    insertmarkerbutton?.addEventListener('click', async () => {
+        const token = getCookie('token')        
+        let data = {
+            "type": "Feature",
+            "properties": {
+            "name": name.value
+            },
+            "geometry": {
+            "type": type,
+            "coordinates": coordinates
+            }
+        }
+        
+        if (type === 'Point') {
+            try {
+                const response = await fetch(aaa, {
+                    method: 'POST',
+                    body: JSON.stringify(data), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`)
+                }
+    
+                const responseData = await response.json()
+                if (responseData.status === false) {
+                    console.log(responseData.message)
+                } else {
+                    console.log(responseData.message)
+                    window.location.reload()
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (type === 'LineString') {
+            try {
+                const response = await fetch(bbb, {
+                    method: 'POST',
+                    body: JSON.stringify(data), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`)
+                }
+    
+                const responseData = await response.json()
+                if (responseData.status === false) {
+                    console.log(responseData.message)
+                } else {
+                    console.log(responseData.message)
+                    window.location.reload()
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        } else if (type === 'Polygon') {
+            try {
+                const response = await fetch(ccc, {
+                    method: 'POST',
+                    body: JSON.stringify(data), // Send the data object, not individual variables
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                })
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`)
+                }
+    
+                const responseData = await response.json()
+                if (responseData.status === false) {
+                    console.log(responseData.message)
+                } else {
+                    console.log(responseData.message)
+                    window.location.reload()
+                }
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        }
+    })
 }
 
 function popupGetMarker(evt, features) {

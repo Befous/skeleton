@@ -1,7 +1,8 @@
 import { setInner } from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.2/croot.js";
+import { transform } from 'https://cdn.skypack.dev/ol/proj.js';
 //map
-import { map } from '../../controller/map/config.js';
-import { onClosePopupClick, onMapPointerMove, disposePopover, onMapClick } from '../../controller/map/popup.js';
+import { overlay, popupinfo, map } from '../../controller/map/config.js';
+import { popupInputMarker, onClosePopupClick, onMapPointerMove, disposePopover, onMapClick } from '../../controller/map/popup.js';
 import { onClick } from '../../controller/map/element.js';
 
 import { get } from '../../controller/map/api.js';
@@ -62,6 +63,45 @@ function addInteraction() {
     
         map.addLayer(layer);
         map.addInteraction(draw);
+
+        draw.on('drawend', function (event) {
+            const feature = event.feature;
+            const geometry = feature.getGeometry();
+            let coordinates;
+
+            if (geometry.getType() === 'Point') {
+                coordinates = transform(geometry.getCoordinates(), 'EPSG:3857', 'EPSG:4326')
+                map.on('click', function(e) {
+                    overlay.setPosition(undefined)
+                    popupinfo.setPosition(undefined)
+                    if (typeSelect.value === 'Point') {
+                        popupInputMarker(e, geometry.getType(), coordinates)
+                    }
+                })
+            } else if (geometry.getType() === 'LineString') {
+                coordinates = geometry.getCoordinates().map((coord) =>
+                    transform(coord, 'EPSG:3857', 'EPSG:4326')
+                )
+                map.on('click', function(e) {
+                    overlay.setPosition(undefined)
+                    popupinfo.setPosition(undefined)
+                    if (typeSelect.value === 'LineString') {
+                        popupInputMarker(e, geometry.getType(), coordinates)
+                    }
+                })
+            } else if (geometry.getType() === 'Polygon') {
+                coordinates = geometry.getCoordinates().map((ring) =>
+                    ring.map((coord) => transform(coord, 'EPSG:3857', 'EPSG:4326'))
+                )
+                map.on('click', function(e) {
+                    overlay.setPosition(undefined)
+                    popupinfo.setPosition(undefined)
+                    if (typeSelect.value === 'Polygon') {
+                        popupInputMarker(e, geometry.getType(), coordinates)
+                    }
+                })
+            }
+        })
     
         document.getElementById('undo').addEventListener('click', function () {
             draw.removeLastPoint();
