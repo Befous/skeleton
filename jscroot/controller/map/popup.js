@@ -143,26 +143,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -185,26 +198,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json()
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -227,26 +253,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -269,26 +308,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -311,26 +363,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -353,26 +418,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error)
@@ -395,26 +473,39 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
-                        icon: "warning",
-                        title: "Warning",
+                        icon: "error",
+                        title: "Error",
                         text: responseData.message,
                         showConfirmButton: true,
                         showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
+                        confirmButtonColor: "#F27474",
                     }).then(() => {
                         window.location.reload();
                     });
                 } else {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: responseData.message,
-                        showConfirmButton: true,
-                        showCancelButton: false,
-                        confirmButtonColor: "#A5DC86",
-                    }).then(() => {
-                        window.location.reload();
-                    });
+                    if (responseData.empty === true) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#F8BB86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: responseData.message,
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            confirmButtonColor: "#A5DC86",
+                        }).then(() => {
+                            window.location.reload();
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error)
