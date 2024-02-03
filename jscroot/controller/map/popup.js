@@ -47,10 +47,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                     }
                 })
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     console.log(responseData.message);
@@ -72,10 +68,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                     }
                 })
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
                 const responseData = await response.json()
                 if (responseData.status === false) {
                     console.log(responseData.message);
@@ -96,10 +88,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         'Authorization': token
                     }
                 })
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
@@ -135,10 +123,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         'Authorization': token
                     }
                 })
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
@@ -191,10 +175,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                     }
                 })
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
                 const responseData = await response.json()
                 if (responseData.status === false) {
                     Swal.fire({
@@ -245,10 +225,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         'Authorization': token
                     }
                 })
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
@@ -301,10 +277,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                     }
                 })
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
@@ -355,10 +327,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         'Authorization': token
                     }
                 })
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
@@ -411,10 +379,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                     }
                 })
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
                 const responseData = await response.json();
                 if (responseData.status === false) {
                     Swal.fire({
@@ -465,10 +429,6 @@ export function popupInputMarker(evt, type, geospatial, coordinates) {
                         'Authorization': token
                     }
                 })
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
     
                 const responseData = await response.json();
                 if (responseData.status === false) {
